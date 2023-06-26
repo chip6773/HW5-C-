@@ -53,6 +53,42 @@ Chetnije(array);
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
+int [] ZapolnjaemMassiva(int dlina)
+{
+    int [] array = new int[dlina];
+    for (int i = 0; i < dlina; i++)
+    {
+        array[i] = new Random().Next (0, 10);
+    }
+    return array;
+}
+
+void PechatMassiva(int [] arr)
+{
+    int count = arr.Length;
+    for (int pos = 0; pos < count; pos++) Console.Write(arr[pos] + " ");
+}
+
+void SumNech (int [] arr)
+{
+    int dlina = arr.Length;
+    int sum = 0;
+    for (int i = 0; i < dlina; i++) 
+    {
+        if (arr[i] % 2 == 1) sum += arr[i];
+    }
+    Console.WriteLine(sum);
+}
+
+Console.Write("введите размер массива -> ");
+int razmer = Convert.ToInt32(Console.ReadLine());
+
+int [] array = ZapolnjaemMassiva(razmer);
+PechatMassiva(array);
+Console.WriteLine();
+Console.Write("сумма нечётных элементов равна ");
+SumNech(array);
+
 
 
 //------------------------------------------------------------------------------
